@@ -16,6 +16,14 @@
   color: #fff;
 }
 
+.link-arrow-left {
+  transition: background-color 0.5s;
+}
+
+.link-arrow-left:hover {
+  background-color: rgb(129, 199, 129);
+}
+
 .links-item {
   width: 700px;
   display: flex;
