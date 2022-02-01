@@ -30,6 +30,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: slideY 2s;
+}
+
+/* Animação subindo area input */
+@keyframes slideY {
+  from {
+    transform: translateY(90px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
 
 .area-input div {
@@ -69,6 +80,12 @@
   color: #000;
   font-weight: bold;
   margin-top: 8px;
+  transition: transform 0.5s;
+}
+
+.area-input button:hover {
+  transform: scale(1.05);
+  background-color: rgb(129, 199, 129);
 }
 
 @media (max-width: 615px) {
