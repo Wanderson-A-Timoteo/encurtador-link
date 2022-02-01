@@ -70,3 +70,39 @@
   font-weight: bold;
   margin-top: 8px;
 }
+
+@media (max-width: 615px) {
+  .logo img {
+    width: 95px;
+  }
+
+  .logo h1 {
+    font-size: 40px;
+  }
+
+  .logo span {
+    font-size: 16px;
+  }
+
+  .area-input {
+    width: 85%;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo img {
+    width: 95px;
+  }
+
+  .logo h1 {
+    font-size: 30px;
+  }
+
+  .logo span {
+    font-size: 14px;
+  }
+
+  .area-input {
+    width: 85%;
+  }
+}
