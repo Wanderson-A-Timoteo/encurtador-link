@@ -83,3 +83,21 @@
     width: 100%;
   }
 }
+
+@media (max-width: 400px) {
+  .links-container {
+    width: 90%;
+  }
+
+  .logo h1 {
+    font-size: 30px;
+  }
+
+  .links-item {
+    width: 100%;
+  }
+
+  .link {
+    width: 100%;
+  }
+}
