@@ -47,7 +47,31 @@
   margin-right: 14px;
 }
 
+.link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .link-delete {
   border: 0;
   background: transparent;
+}
+
+@media (max-width: 715px) {
+  .links-container {
+    width: 90%;
+  }
+
+  .logo h1 {
+    font-size: 40px;
+  }
+
+  .links-item {
+    width: 100%;
+  }
+
+  .link {
+    width: 100%;
+  }
 }
