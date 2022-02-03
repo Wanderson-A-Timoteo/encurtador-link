@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import "./links.css";
 import { FiArrowLeft, FiLink, FiTrash } from "react-icons/fi";
 import { Link } from "react-router-dom";
+
 import { getLinksSave } from "../../services/storeLinks";
+import LinkItem from "./../../components/LinkItem/index";
 
 export default function Links() {
   const [myLinks, setMyLinks] = useState([]);
@@ -12,12 +14,13 @@ export default function Links() {
 
   useEffect(() => {
     async function getLinks() {
-      const result = await getLinksSave("@encurtaLink");
+      const result = await getLinksSave("@encurtalink");
 
       if (result.length === 0) {
         // Nossa lista esta vazia...
         console.log("Lista vazia");
       }
+
       setMyLinks(result);
     }
 
@@ -33,16 +36,18 @@ export default function Links() {
         <h1>Meus Links</h1>
       </div>
 
-      <div className="links-item">
-        <button className="link">
-          <FiLink size={18} color="#FFF" />
-          https://sujeitoprogramador.com
-        </button>
+      {myLinks.map((link) => (
+        <div key={link.id} className="links-item">
+          <button className="link">
+            <FiLink size={18} color="#FFF" />
+            {link.long_url}
+          </button>
 
-        <button className="link-delete">
-          <FiTrash size={24} color="#FF5454" />
-        </button>
-      </div>
+          <button className="link-delete">
+            <FiTrash size={24} color="#FF5454" />
+          </button>
+        </div>
+      ))}
     </div>
   );
 }
