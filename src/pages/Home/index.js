@@ -4,6 +4,7 @@ import "./home.css";
 import Menu from "./../../components/menu/index";
 import LinkItem from "./../../components/LinkItem/index";
 import api from "../../services/api";
+import { saveLink } from "../../services/storeLinks";
 
 export default function Home() {
   const [link, setLink] = useState("");
@@ -15,6 +16,7 @@ export default function Home() {
       const response = await api.post("/shorten", { long_url: link });
       setData(response.data);
       setShowModal(true);
+      saveLink("@encurtalink", response.data);
       setLink("");
     } catch {
       alert("Ops parece que algo deu errado!");
